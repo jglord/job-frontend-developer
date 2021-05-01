@@ -30,7 +30,7 @@ export default {
 
 .searchBanda {
   height: 40px;
-  width: 1004px;
+  width: 92%;
   margin-left: 4px;
 }
 
@@ -39,6 +39,8 @@ export default {
   color: #2c3e50;
   position: absolute;
   top: 1%;
-  left: 20%;
+  left: 23%;
+    width: 1400px;
+
 }
 </style>

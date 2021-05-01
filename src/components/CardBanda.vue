@@ -28,15 +28,15 @@
     <!-- Redes sociais da banda -->
     <i
       class="nes-icon youtube is-large"
-      style="margin-right: 10%; margin-top: 1%"
+      style="margin-right: 8%; margin-top: 3%"
     ></i>
-    <i class="nes-icon facebook is-large" style="margin-right: 10%"></i>
-    <i class="nes-icon twitter is-large" style="margin-right: 10%"></i>
+    <i class="nes-icon facebook is-large" style="margin-right: 8%"></i>
+    <i class="nes-icon twitter is-large" style="margin-right: 8%"></i>
     <i class="nes-icon instagram is-large"></i>
 
     <span
       class="nes-text"
-      style="font-size: 8px; display: block; text-align: center"
+      style="font-size: 0.7em; display: block; text-align: center"
     >
       Redes Sociais
     </span>
@@ -52,7 +52,7 @@ export default {
       banda: {
         nomeBanda: "Banda",
         descricao:
-          "descrição descrição descrição descrição descrição descrição descrição descrição descrição descrição descrição descrição descrição descrição descrição descrição descrição descrição descrição descrição descrição descrição descrição descrição descrição descrição descrição descrição descrição ",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         bandaImgs: [
           {
             img:
@@ -90,16 +90,11 @@ export default {
   height: 210px;
 }
 
-.imgList {
-  display: inline-block;
-}
-
 .cardBanda {
-  position: fixed;
-  left: 20%;
-  top: 13%;
-  height: 600px;
-  width: 1175px;
+  left: 23%;
+  margin-top: 5.5%;
+  height: 560px;
+  width: 1400px;
 }
 
 ul,

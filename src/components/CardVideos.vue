@@ -12,8 +12,7 @@
         <span class="nes-text tituloVideo" style="">
           {{ item.titulo }}
         </span>
-        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-        <!-- 
+        
 
           <YoutubeVue3
             ref="youtube"
@@ -23,7 +22,7 @@
             :height="320"
           />
           
-           -->
+        
         <span class="nes-text descricaoVideo">
           {{ item.descricao }}
         </span>

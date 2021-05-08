@@ -5,26 +5,28 @@
         Vídeos
       </span>
       <div
-        v-for="item in videosBanda"
-        :key="item.url"
+        v-for="video in videosBanda"
+        :key="video.id"
         class="nes-container cardVideo"
       >
         <span class="nes-text tituloVideo" style="">
-          {{ item.titulo }}
+          {{ video.titulo }}
         </span>
-        
 
-          <YoutubeVue3
-            ref="youtube"
-            videoid="9enmxmhyGsY"
-            loop="1"
-            :width="335"
-            :height="320"
-          />
-          
-        
+        <iframe
+          :id="video.id"
+          style="
+            border-style: none;
+            border-color: inherit;
+            border-width: 0px;
+            height: 400px;
+            width: 100%;
+          "
+          :src="video.videoUrl"
+        ></iframe>
+
         <span class="nes-text descricaoVideo">
-          {{ item.descricao }}
+          {{ video.descricao }}
         </span>
       </div>
     </div>
@@ -32,45 +34,57 @@
 </template>
 
 <script>
-//import { YoutubeVue3 } from "youtube-vue3";
+
+const baseBandUrl = "https://app.ticketmaster.com/discovery/v2/attractions"
+
+
+
+
 
 export default {
   name: "CardVideos",
-  components: {
-    /*YoutubeVue3*/
-  },
+  components: {},
   data() {
     return {
       videosBanda: [
         {
-          url: "https://img.icons8.com/ios/452/video.png",
-          descricao:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate",
-          titulo: "Titulo do video",
+          id: 1,
+          videoUrl: "",
+          url: "",
+          descricao: "",
+          titulo: "",
         },
         {
-          url: "https://img.icons8.com/ios/452/video.png",
-          descricao:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate",
-          titulo: "Titulo do video",
+          id: 2,
+          videoUrl: "",
+          url: "",
+          descricao: "",
+          titulo: "",
         },
         {
-          url: "https://img.icons8.com/ios/452/video.png",
-          descricao:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate",
-          titulo: "Titulo do video",
+          id: 3,
+          videoUrl: "",
+          url: "",
+          descricao: "",
+          titulo: "",
         },
       ],
     };
+  },
+  setup() {
+    onMounted(() => {
+
+
+    });
   },
 };
 </script>
 
 <style>
 .contVideos {
-  left: 23%;
+  left: 15%;
   margin-top: 0.8%;
-  height: 620px;
+  height: 680px;
   width: 1400px;
 }
 

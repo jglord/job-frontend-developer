@@ -39,7 +39,7 @@ export default {
   color: #2c3e50;
   position: absolute;
   top: 1%;
-  left: 23%;
+  left: 15%;
     width: 1400px;
 
 }

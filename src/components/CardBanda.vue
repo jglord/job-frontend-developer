@@ -91,8 +91,8 @@ export default {
 }
 
 .cardBanda {
-  left: 23%;
-  margin-top: 5.5%;
+  left: 15%;
+  margin-top: 7%;
   height: 560px;
   width: 1400px;
 }

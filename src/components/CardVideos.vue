@@ -34,17 +34,16 @@
 </template>
 
 <script>
+//const apiKey = "q2GNlCrgGo6c8uej3Ib4MsbAC2KIr5nG"
+//let bandId = 0;
+//const baseUrlTM = `https://app.ticketmaster.com/discovery/v2/attractions${bandId}.json?apikey=${apiKey}`
 
-const baseBandUrl = "https://app.ticketmaster.com/discovery/v2/attractions"
-
-
-
-
-
+// Url geral apenas para desenvolvimento inicial
+//const baseUrlTM = "http://app.ticketmaster.com/discovery/v2/attractions.json?size=1&apikey=q2GNlCrgGo6c8uej3Ib4MsbAC2KIr5nG" 
 export default {
   name: "CardVideos",
   components: {},
-  data() {
+  data: () => {
     return {
       videosBanda: [
         {
@@ -71,13 +70,11 @@ export default {
       ],
     };
   },
-  setup() {
-    onMounted(() => {
-
-
-    });
-  },
+  mounted: () => {
+    
+  }
 };
+
 </script>
 
 <style>

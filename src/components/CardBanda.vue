@@ -5,24 +5,27 @@
             {{ banda.name }}
         </span>
 
-        <!-- Imagens da banda -->
+        <!-- Imagens da banda 
         <div
-            v-for="item in banda.bandaImgs"
+            v-for="item in banda.images"
             :key="item.img"
             class="cardImg"
             style="padding: 0; margin-bottom: 1%; margin-top: 0.5%"
         >
-            <li>
-                <img class="img" :src="item.img" alt="" srcset="" />
-            </li>
         </div>
+        -->
+        <li>
+            <img class="img" :src="banda.image" alt="" srcset="" />
+        </li>
 
         <!-- Descrição da banda -->
         <span
             class="nes-text"
             style="font-size: 14px; display: block; text-align: justify"
         >
-            {{ banda.descricao }}
+            Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem
+            ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+            Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
         </span>
 
         <!-- Redes sociais da banda -->
@@ -60,7 +63,16 @@ function setBand(band, respBands) {
     const respBand = respBands.filter(
         filterBand => band.toLowerCase() === filterBand.name.toLowerCase()
     );
+    console.log("SetBand: ", respBand[0]);
     return respBand[0];
+}
+
+function makeBand(band) {
+    return {
+        name: band.name,
+        classifications: band.classifications,
+        image: band.images[0].url
+    };
 }
 
 export default {
@@ -74,8 +86,9 @@ export default {
         // Montando componente com objeto recebido da api do tickemaster
         onMounted(async () => {
             const respBands = await getBand(banda.value.name);
-            //console.log("respBands: ", respBands);
-            console.log("Set Band: ", setBand(store.state.band, respBands));
+            // setband -> verificando e retornando banda pesquisada, makeband -> retornando banda formatada e atribuindo a propriedade reativa banda
+            banda.value = makeBand(setBand(store.state.band, respBands));
+            console.log("Band final: ", banda.value);
         });
 
         return { banda };
@@ -92,8 +105,8 @@ export default {
 
 .img {
     padding: 1%;
-    width: 100%;
-    height: 210px;
+    width: 70%;
+    height: 300px;
 }
 
 .cardBanda {

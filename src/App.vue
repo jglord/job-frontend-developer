@@ -3,7 +3,6 @@
         <SearchButton />
         <div v-if="searched">
             <CardBanda />
-
             <CardVideos />
         </div>
     </div>

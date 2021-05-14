@@ -5,7 +5,7 @@
                 Vídeos
             </span>
             <div
-                v-for="video in 3"
+                v-for="video in videos"
                 :key="video.id"
                 class="nes-container cardVideo"
             >
@@ -14,15 +14,10 @@
                 </span>
 
                 <iframe
-                    id="ytplaye`"
-                    style="
-                border-style: none;
-                border-color: inherit;
-                border-width: 0px;
-                height: 400px;
-                width: 100%;
-              "
-                    :src="videos"
+                    id="ytplayer"
+                    width="100%"
+                    height="400px"
+                    :src="video.url"
                 ></iframe>
 
                 <span class="nes-text descricaoVideo">
@@ -43,9 +38,21 @@ import axios from "axios";
 async function getVideos(band) {
     const baseUrlYoutube = `https://youtube.googleapis.com/youtube/v3/search?q=${band}&key=AIzaSyD2lAc4tCesk-E9_gGCx5IYeweng-CNBds`;
     const resp = await axios.get(baseUrlYoutube);
-    return resp.data.items.map(
-        e => "http://www.youtube.com/embed/" + e.id.videoId
-    );
+    const videos = [];
+    // 1 aceito, 2 aceito, 3
+    resp.data.items.every((e, i) => {
+        console.log("i: ", i);
+        videos.push({
+            id: i,
+            titulo: "",
+            url: `https://www.youtube.com/embed/${e.id.videoId}`
+        });
+        if (i === 2) {
+            return false;
+        } else return true;
+    });
+    console.log("videos getVideos: ", videos);
+    return videos;
 }
 
 export default {
@@ -56,7 +63,8 @@ export default {
         const videos = ref([]);
         onMounted(async () => {
             videos.value = await getVideos(store.state.band);
-            console.log("videos", videos.value);
+
+            console.log("videos reactive: ", JSON.stringify(videos.value));
         });
 
         return { videos };
